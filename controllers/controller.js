@@ -24,7 +24,7 @@ class controller {
         try {
             const { title, id } = req.body
             await todo.createTodo(title, id)
-            res.json({ message: 'Todo created successfully' })
+            res.status(201).json({ message: 'Todo created successfully' })
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' })
         }

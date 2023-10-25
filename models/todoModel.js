@@ -24,11 +24,11 @@ class todo {
         }
     }
 
-    static async createTodo(title, id) {
+    static async createTodo(title) {
         try {
             await pool.query(
-                'INSERT INTO todo ("title", "id") VALUES ($1, $2)',
-                [title, id]
+                'INSERT INTO todo ("title") VALUES ($1)',
+                [title]
             )
         } catch (error) {
             throw error
