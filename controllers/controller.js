@@ -11,8 +11,8 @@ class controller {
     }
 
     static async detailTodo(req, res) {
-        const todoId = req.params.id
         try {
+            const todoId = req.params.id
             const detail = await todo.detailTodo(todoId)
             res.json(detail)
         } catch (error) {
@@ -21,8 +21,8 @@ class controller {
     }
 
     static async createTodo(req, res) {
-        const { title, id } = req.body
         try {
+            const { title, id } = req.body
             await todo.createTodo(title, id)
             res.json({ message: 'Todo created successfully' })
         } catch (error) {
@@ -31,8 +31,8 @@ class controller {
     }
 
     static async deleteTodo(req, res) {
-        const todoId = req.params.id
         try {
+            const todoId = req.params.id
             await todo.deleteTodo(todoId)
             res.json({ message: 'Todo deleted successfully' })
         } catch (error) {
