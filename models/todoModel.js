@@ -47,4 +47,4 @@ class todo {
     }
 }
 
-module.exports = todo;
+module.exports = todo
