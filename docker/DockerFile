@@ -1,6 +1,6 @@
 FROM node
 
-WORKDIR /todo_api_docker/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
