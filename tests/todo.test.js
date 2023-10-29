@@ -24,7 +24,7 @@ describe("GET /todo/:id", () => {
             .expect('Content-Type', /json/)
             .expect(200)
             .then(response => {
-                expect(response.body.title).toBe("Wake Up")
+                expect(response.body.data.title).toBe("Wake Up")
                 done()
             })
             .catch(done)
