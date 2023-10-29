@@ -2,7 +2,7 @@ const Pool = require('pg').Pool
 /*
 const pool = new Pool({
     user: 'postgres',
-    host: 'host.docker.internal',
+    host: 'localhost',
     database: 'project-database',
     password: 'postgres1234',
     port: 5432,
@@ -11,7 +11,7 @@ const pool = new Pool({
 
 const pool = new Pool({
     user: 'postgres',
-    host: 'localhost',
+    host: 'host.docker.internal',
     database: 'project-database',
     password: 'postgres1234',
     port: 5432,
