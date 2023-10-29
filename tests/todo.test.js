@@ -8,7 +8,7 @@ describe("GET /todo", () => {
             .expect('Content-Type', /json/)
             .expect(200)
             .then(response => {
-                expect(response.body.data.length).toBe(10)
+                expect(response.body.length).toBe(10)
                 done()
             })
             .catch(done)
@@ -18,18 +18,19 @@ describe("GET /todo", () => {
 describe("GET /todo/:id", () => {
     test('Get detailed todo successfully', (done) => {
         const id = 1
-
+    
         request(app)
             .get(`/todo/${id}`)
             .expect('Content-Type', /json/)
             .expect(200)
             .then(response => {
-                expect(response.body.data.length).toBe(1)
+                expect(response.body.data.title).toBe("Wake Up")
                 done()
             })
             .catch(done)
-    })
-});
+    });
+    
+})
 
 describe("POST /todo", () => {
     test('Add todo successfully', (done) => {
@@ -51,9 +52,9 @@ describe("POST /todo", () => {
 });
 
 describe("DELETE /todo/:id", () => {
-    test('Delete todo', (done) => {
-        const id = 1
-
+    test('Delete todo successfully', (done) => {
+        const id = 5;
+    
         request(app)
             .delete(`/todo/${id}`)
             .expect('Content-Type', /json/)
@@ -64,4 +65,5 @@ describe("DELETE /todo/:id", () => {
             })
             .catch(done)
     })
-});
+    
+})
