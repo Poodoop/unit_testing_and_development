@@ -4,7 +4,7 @@ class controller {
     static async getTodo(req, res) {
         try {
             const get = await todo.getTodo()
-            res.json(get)
+            res.status(200).json(get)
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' })
         }
@@ -14,7 +14,7 @@ class controller {
         try {
             const todoId = req.params.id
             const detail = await todo.detailTodo(todoId)
-            res.json(detail)
+            res.status(200).json(detail)
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' })
         }
@@ -34,7 +34,7 @@ class controller {
         try {
             const todoId = req.params.id
             await todo.deleteTodo(todoId)
-            res.json({ message: 'Todo deleted successfully' })
+            res.status(204).json({ message: 'Todo deleted successfully' })
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' })
         }
