@@ -24,7 +24,7 @@ describe("GET /todo/:id", () => {
             .expect('Content-Type', /json/)
             .expect(200)
             .then(response => {
-                expect(response.body.data.title).toBe("Wake Up")
+                expect(response.body.title).toBe("Wake Up")
                 done()
             })
             .catch(done)
@@ -42,7 +42,7 @@ describe("POST /todo", () => {
             .post('/todo')
             .send(postTodo)
             .expect('Content-Type', /json/)
-            .expect(201)
+            .expect(200)
             .then(response => {
                 expect(response.body.message).toBe('Todo created successfully')
                 done()
@@ -58,7 +58,7 @@ describe("DELETE /todo/:id", () => {
         request(app)
             .delete(`/todo/${id}`)
             .expect('Content-Type', /json/)
-            .expect(204)
+            .expect(200)
             .then(response => {
                 expect(response.body.message).toBe("Todo deleted successfully")
                 done()

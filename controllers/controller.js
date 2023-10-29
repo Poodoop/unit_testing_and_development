@@ -24,7 +24,7 @@ class controller {
         try {
             const title = req.body.title
             await todo.createTodo(title)
-            res.status(201).json({ message: 'Todo created successfully' })
+            res.status(200).json({ message: 'Todo created successfully' })
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' })
         }
@@ -34,7 +34,7 @@ class controller {
         try {
             const todoId = req.params.id
             await todo.deleteTodo(todoId)
-            res.status(204).json({ message: 'Todo deleted successfully' })
+            res.status(200).json({ message: 'Todo deleted successfully' })
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' })
         }
